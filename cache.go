@@ -9,25 +9,25 @@ type item struct {
 	v interface{}
 }
 
-type Cache struct {
+type cache struct {
 	cache map[string]*list.Element
 	order *list.List
 	limit int
 }
 
-func New(size int) *Cache {
-	return new(Cache).Init(size)
+func New(size int) *cache {
+	return new(cache).init(size)
 }
 
-func (c *Cache) Init(n int) *Cache {
-	return &Cache{
+func (c *cache) init(n int) *cache {
+	return &cache{
 		cache: make(map[string]*list.Element),
 		order: list.New(),
 		limit: n,
 	}
 }
 
-func (c *Cache) Set(key string, val interface{}) bool {
+func (c *cache) Set(key string, val interface{}) bool {
 
 	// existing key, just renew the value
 	e, exists := c.cache[key]
@@ -65,7 +65,7 @@ func (c *Cache) Set(key string, val interface{}) bool {
 	return true
 }
 
-func (c *Cache) Get(key string) (interface{}, bool) {
+func (c *cache) Get(key string) (interface{}, bool) {
 
 	val, ok := c.cache[key]
 	if !ok {
