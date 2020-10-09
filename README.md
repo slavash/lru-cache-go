@@ -8,6 +8,7 @@ Usage:
 cache := cache.New(2)
 
 u1 := User{name: "slava", age:  40}
+cache.Set("user1", u1)
 ...
 
 user, found := cache.Get("user1")
