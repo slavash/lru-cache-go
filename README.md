@@ -1,6 +1,8 @@
 # LRU Cache
 
-Implementation of LRU logic for cache in Go
+Implementation of LRU logic for cache in Go.  
+
+https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)
 
 Usage:
 
